@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.text {
+    display: flex;
+    flex-direction: row;
+}
+
+.text a {
+    margin-top: 10px;
+    font-size: large;
+    font-weight: bold;
+    color: black;
+}
+
+.text i {
+    justify-content: end;
+    margin-top: -20px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.text h5 {
+    flex-grow: 1;
+}
+
+.index {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: rgb(255, 255, 255);
+    overflow-y: auto;
+}
+
+.titre_btn {
+    display: flex;
+    flex-direction: row;
+}
+
+.titre_btn a {
+    font-size: 50px;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #9b9898;
+    min-width: 240px;
+    max-width: 240px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #333;
+    color: white;
+}
+
+.logoiut {
+    padding-bottom: 20px;
+}
+
+.form {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    height: 400px;
+    padding: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 12px;
+}
+
+.all_cards {
+    display: flex;
+    flex-direction: row;
+    max-width: 100vw;
+    margin: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    min-width: 300px !important;
+    max-width: 300px;
+    min-height: 200px;
+    max-height: 200px;
+    margin: 50px;
+}
+
+.card-body {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.titre {
+    display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.buttons button {
+    margin-right: 10px;
+}
