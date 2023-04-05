@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Events</title>
+    <title>Users</title>
 </head>
 <body>
     <div class="index">
@@ -28,37 +28,23 @@
         <div class="content">
 
             <div class="titre_btn">
-                <h1 class="titre">Events</h1>
-                @if(auth()->user()->role == 'admin')
-                    <a href="{{ route('events.create') }}"><i class="bi bi-plus-circle-fill"></i></a>
-                @endif
+                <h1 class="titre">Users</h1>
             </div>
 
             <div class="all_cards">
-                @foreach($events as $event)
+                @foreach($users as $user)
                         <div class="card border-rounded">
                             <div class="card-body">
                                 <div class="text">
-                                    <h5 class="card-title mb-4 mt-2" id="event-name">{{$event->name}}</h5>
-                                    @if(auth()->user()->role == 'admin')
-                                        <a href="{{ route('events.edit',['event' => $event]) }}">
-                                            <i class="bi bi-pencil"></i>
-                                        </a>
-                                    @endif
+                                    <h5 class="card-title mb-4 mt-2" id="event-name">{{$user->name}}</h5>
                                 </div>
-                                <h6 class="card-subtitle mb-2 text-muted" id="iut-name">{{$event->lieu}}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted" id="iut-name">{{$user->email}}</h6>
+                                <p class="card-text">{{ $user->role }}</p>
                                 <p class="card-text">
-                                    <i class="bi bi-calendar3"></i> <span id="event-date">{{$event->date_fin->format('d/m/Y')}}</span>
+                                    <i class="bi bi-calendar3"></i> <span id="event-date">{{$user->created_at->format('d/m/Y')}}</span>
                                 </p>
                                 <div class="buttons">
-                                    @if(auth()->user()->events() != null)
-                                        <form action="{{ route('events.register', ['event' => $event ]) }}" method="POST">
-                                            @csrf
-                                            <button type="submit" class="btn btn-primary">S'inscrire</button>
-                                        </form>
-                                    @endif
-                                    
-                                    <form action="{{ route('events.destroy',['event' => $event]) }}" method="POST">
+                                    <form action="{{ route('users.destroy',['user' => $user]) }}" method="POST">
                                         @csrf
                                         @method('delete')
                                         @if(Auth::user()->role == 'admin')

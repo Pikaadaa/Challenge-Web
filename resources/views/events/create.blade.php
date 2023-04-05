@@ -15,9 +15,11 @@
                 <img class="logoiut" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThb3qCc1QG9bNgZaSpxu-HplKPB6-YKxb7uzKp_6QN8Q&s">
     
                 <ul>
-                    <li><a href="{{ route('events.index') }}">Events</a></li>
-                    <li><a href="{{ route('events.index') }}">Events</a></li>
-                    <li><a href="{{ route('events.index') }}">Events</a></li>
+                  <li><a href="/">Dashboard</a></li>
+                  <li><a href="{{ route('events.index') }}">Events</a></li>
+                  @if(Auth::user()->role == 'admin')
+                      <li><a href="{{ route('users.index') }}">Users</a></li>
+                  @endif
                 </ul>
             </div>
     

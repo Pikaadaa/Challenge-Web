@@ -97,4 +97,11 @@ class EventController extends Controller
         
         return redirect()->route('events.index')->with('success', 'Event supprimé !');
     }
+
+    public function register(Event $event)
+    {
+        auth()->user()->events()->attach($event);
+
+        return redirect()->route('events.index')->with('success', 'Inscription réussie !');
+    }
 }

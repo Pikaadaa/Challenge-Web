@@ -13,4 +13,8 @@ class Event extends Model
 
     protected $dates = ['date_fin'];
 
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
+
 }
